@@ -14,6 +14,8 @@ class Client extends Model
     */
     protected $table = "clients";
 
+    public $timestamps = false;
+
     public function products()
     {
         return $this->hasMany(Product::class);

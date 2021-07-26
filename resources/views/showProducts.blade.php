@@ -7,7 +7,7 @@
 <table class="col-md-12 table">
     <thead>
         <tr>
-            <th scope="col">#</th>
+            <th scope="col">Id produktu</th>
             <th scope="col">Nazwa produktu</th>
             <th scope="col">Opis produktu</th>
             <th scope="col">Cena</th>
@@ -21,7 +21,7 @@
                 <td>{{$product['name']}}</td>
                 <td>{{$product['description']}}</td>
                 <td>{{$product['price']}}</td>
-                <td>button</td>
+                <td><a href="{{ route('buy', $product['id'])}}" class="btn btn-success">Kup teraz</a></td>
             <tr>
         @endforeach
     </tbody>

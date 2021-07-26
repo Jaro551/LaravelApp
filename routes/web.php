@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ClientController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,9 @@ Route::get('/', function () {
 });
 
 Route::get('showProducts', [ProductController::class, 'showProducts']);
+Route::get('/buynow/{id}', [ProductController::class, 'buynow'])->name('buy');
+Route::post('clientform', [ClientController::class, 'clientform']);
+Route::view('clientform', 'clientform');
 
 Auth::routes();
 
