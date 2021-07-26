@@ -26,4 +26,9 @@ class Product extends Model
         'name',
         'description',
     ];
+
+    public function client()
+    {
+        return $this->belongsTo(Client::class);
+    }
 }

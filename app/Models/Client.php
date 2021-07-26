@@ -9,6 +9,11 @@ class Client extends Model
 {
     use HasFactory;
 
+    /** 
+    * @var string
+    */
+    protected $table = "clients";
+
     public function products()
     {
         return $this->hasMany(Product::class);

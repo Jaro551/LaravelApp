@@ -25,6 +25,7 @@ class ProductFactory extends Factory
         return [
             'name' => $this->faker->unique()->bothify('?###??##'),
             'description' => $this->faker->paragraph,
+            'price' => $this->faker->bothify('###'),
         ];
     }
 }
