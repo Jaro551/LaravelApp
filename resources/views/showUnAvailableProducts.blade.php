@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<h1>Dostępne produkty</h1>
+<h1>Niedostępne produkty</h1>
 
 <hr>
 
@@ -9,9 +9,9 @@
         <tr>
             <th scope="col">Id produktu</th>
             <th scope="col">Nazwa produktu</th>
-            <th scope="col" style="width:75%;">Opis produktu</th>
+            <th scope="col">Opis produktu</th>
             <th scope="col">Cena</th>
-            <th scope="col">Kup produkt</th>
+            <th scope="col">Zakupiony przez(Id klienta)</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +21,7 @@
                 <td>{{$product['name']}}</td>
                 <td>{{$product['description']}}</td>
                 <td>{{$product['price']}}</td>
-                <td><a href="{{ route('buy', $product['id'])}}" class="btn btn-success">Kup teraz</a></td>
+                <td>{{$product['client_id']}}</td>
             <tr>
         @endforeach
     </tbody>

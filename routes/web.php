@@ -14,14 +14,16 @@ use App\Http\Controllers\ClientController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [ProductController::class, 'showProducts'], function () {
+    return view('showProducts');
 });
 
-Route::get('showProducts', [ProductController::class, 'showProducts']);
+Route::get('showProducts', [ProductController::class, 'showProducts'])->name('showProducts');
 Route::get('/buynow/{id}', [ProductController::class, 'buynow'])->name('buy');
 Route::post('clientform', [ClientController::class, 'clientform']);
 Route::view('clientform', 'clientform');
+Route::get('showClients', [ClientController::class, 'showClients'])->name('clients');
+Route::get('showUnAvailableProducts', [ProductController::class, 'showUnAvailableProducts'])->name('unavailableproducts');
 
 Auth::routes();
 

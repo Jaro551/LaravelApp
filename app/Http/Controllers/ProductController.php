@@ -12,8 +12,14 @@ class ProductController extends Controller
     //
     function showProducts()
     {
-        $products = Product::all();
+        $products = Product::where('isAvailable', true)->get();
         return view('showProducts', ['products' => $products]);
+    }
+
+    function showUnAvailableProducts()
+    {
+        $products = Product::where('isAvailable', false)->get();
+        return view('showUnAvailableProducts', ['products' => $products]);
     }
 
     function buynow($id)
